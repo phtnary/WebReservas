@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+	<!DOCTYPE html>
+	<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>WebReservasAventura</title>
+	    <link rel="stylesheet" href="/css/home.css">
+		<link rel="stylesheet" href="css/w3.css">
+		<script src="js/home.js"></script>
+	</head>
+	<body>
+	    
+	    <header class="header">
+	        <div class="info-header">               
+	            <div class="container-nav">
+					<div class="contenedor-logo">
+	                <img src="/img/logo.png" alt="logo-img" style="width:22rem;height:8rem;">
+					</div>
+					<div class="bar-nav">
+	                    <nav class="navegacion">
+							
+							
+							<a th:href="@{/preguntasFrecuentes}" class="w3-button">FAQ's</a>
+					          <div class="w3-dropdown-hover">
+								
+							    <button class="w3-button">Login</button>
+							    <div class="w3-dropdown-content w3-bar-block w3-border">
+							    
+								  <a th:href="@{/myHome}" class="w3-bar-item w3-button">Lógate</a>
+							      <a th:href="@{/registro}" class="w3-bar-item w3-button">Regístrate</a>
+							      
+							    </div>
+							  </div>
+							
+						</nav>
+					</div> 
+	           	 </div>
+	        </div>
+			<div id="message" class="hidden">
+			   <h3>¡La magia de Asturias te espera!</h3>
+			 </div>
+	    </header>
+		
+			
+		
+
+		<div class="content-container">
+		       <!-- Formulario -->
+		       <div class="form-container">
+		            <form th:action="@{/actividades}" th:object="${datosBusqueda}" method="post">
+		               <div class="form-group">
+		                   <label class="label-lugar" for="lugar">Lugar:</label>
+		                   <!--<input th:field="*{ciudad}"type="text" id="autocomplete" name="lugar" placeholder="Ingrese el lugar" required>-->
+						   <select th:field="*{ciudad}">
+	   					       <option th:each="i : ${listaCiudades}" th:value="${i.localidad}" th:text="${i.localidad}">
+	   					       </option>
+	   					   </select>
+					    </div>
+					   
+		               <div class="form-group">
+		                   <label for="fecha">Fecha:</label>
+		                   <input th:field="*{date}" type="date" id="fecha" name="fecha" th:min="${fechaActual}" required >
+		               </div>
+
+		               <div class="form-group">
+		                   <label for="personas">Personas:</label>
+		                   <input th:field="*{numPersonas}" type="number" id="personas" name="personas" placeholder="Número de personas" min="1" required>
+		               </div>
+
+		               <button type="submit" id="enviar" class="btn">Buscar</button>
+		           </form>
+		       </div>
+
+		       <!-- Imagen -->
+		       <div class="image-container">
+		           <img class="image"src="/img/naranjo-de-bulnes.jpg" alt="imagen">
+				   <div class="text-block">
+				       <h3>Naturaleza y Deporte</h3>
+				       
+				    </div>
+		       </div>
+		   </div>
+
+	    
+	        <footer class="header">
+	            <div >
+	               <p>destinoaventura@tudestinoenasturias.com </p>
+	            </div>
+	    
+	            <p>Todos los derechos Reservados 2025 &copy;</p>
+	        </footer>
+
+			
+
+	</body>
+	</html>

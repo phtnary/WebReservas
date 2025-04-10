@@ -1,0 +1,103 @@
+
+
+	<!DOCTYPE html>
+	<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>WebReservasAventura</title>
+	    <link rel="stylesheet" href="css/actividades.css">
+		<link rel="stylesheet" href="css/w3.css">
+		<link href="js/leaflet/leaflet.css" rel="stylesheet">
+		<script src="js/leaflet/leaflet.js"></script>
+		
+		
+	</head>
+	<body th:coordenadas="${arrayJson}" th:onload="mostrarDatosMapa(document.body.getAttribute('coordenadas'))">
+
+		<header class="header">
+		        <div class="info-header">               
+		            <div class="container-nav">
+		                <a th:href="@{/home}"><img src="/img/logo.png" alt="logo-img" style="width:22rem;height:8rem;"></a>
+		                <div class="bar-nav">
+		                    <nav class="navegacion">
+								
+								<a th:href="@{/home}" class="w3-button">Home</a>
+								<a th:href="@{/preguntasFrecuentes}" class="w3-button">FAQ's</a>
+								
+						          <div class="w3-dropdown-hover"th:if="${usuarioSesion=='anonymousUser'}">
+								    <button class="w3-button">Login</button>
+								    <div class="w3-dropdown-content w3-bar-block w3-border">
+								      <a th:href="@{/myHome}" class="w3-bar-item w3-button">Lógate</a>
+								      <a th:href="@{/registro}" class="w3-bar-item w3-button">Regístrate</a>
+								    </div>
+								  </div> 
+								  
+								  <div class="w3-dropdown-hover"th:if="${usuarioSesion!='anonymousUser'}">							
+	  							    <button class="w3-button" th:text="${usuarioSesion}"></button>
+	  							    <div class="w3-dropdown-content w3-bar-block w3-border">
+	  							      <a th:href="@{/miPerfil}" class="w3-bar-item w3-button">Ver Perfil</a>
+	  								  <form th:action="@{/logout}" method="post">
+	  							      <button type="submit" class="w3-bar-item w3-button">Cerrar sesión</button>
+	  								  </form>
+	  							    </div>
+	  							  </div>
+							</nav>
+						</div> 
+		           	 </div>
+		        </div>
+		    </header>
+	
+			<div id="map"></div>
+			
+			<div class="container">
+				<div class="container-noActividades" th:if="${inforActividades.size()==0}">
+					<p >No hay actividades en este destino</p>
+					<a class="buton-reserva"  th:href="@{'/home'}"> < Volver </a>
+				</div>
+				<div th:each="inforActividad: ${inforActividades}" >
+					<div class="flip-card">
+					  <div class="flip-card-inner">
+					    <div class="flip-card-front">
+					      <img th:src="'/img/'+${inforActividad.nombreActividad}+'.jpg'" class="img-flip-card">
+					      <div>						 
+							 <span class="w3-tag w3-teal w3-large" th:text="${inforActividad.nombreActividad}"></span>
+							 <p class="w3-tag w3-teal">Plazas libres! <span class="w3-badge w3-orange" th:text="${inforActividad.numPlazas}"></span></p>
+							 
+						  </div>
+					      
+					      <p th:text="${inforActividad.duracion} + ' horas de experiencia'"></p>
+					      <p th:text="${inforActividad.precioPorPersona.intValue()} + '€ por persona'"></p>
+						  <p th:text="'A las '+ ${inforActividad.hora} + ' horas'"></p>
+						  <p th:text="${inforActividad.nombreEmpresa}"></p>
+					 
+					    </div>
+					    <div class="flip-card-back">
+							
+					        <p th:text=" 'Este destino está en ' + ${inforActividad.ciudad}"></p>
+					        <p th:text=" 'Te ofrece una experiencia en ' + ${inforActividad.nombreActividad}"></p>
+					        <p>Incluye: </p>
+							<p>Todo el material necesario</p>
+							<p>Importe: </p>
+					        <p th:text=" ' Total para ' + ${inforActividad.numPersonas} +' persona/s: ' + ${inforActividad.precioTotal.intValue()} + ' €'"></p>
+							
+					        <a class="buton-reserva" th:href="@{'/detalleReserva?idActividad=' + ${inforActividad.idActividad}}">Reservar</a>
+							
+					    </div>
+					  </div>
+					</div>
+				  </div>
+					
+	
+	       </div>
+		   <footer class="header">
+   	            <div >
+   	               <p>destinoaventura@tudestinoenasturias.com </p>
+   	            </div>
+   	    
+   	            <p>Todos los derechos Reservados 2025 &copy;</p>
+   	        </footer>
+	
+			<script src="js/obtenerCoordenadas.js"></script>
+	</body>
+</html>

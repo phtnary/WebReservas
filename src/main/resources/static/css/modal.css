@@ -1,0 +1,13 @@
+.botonModal{
+	background-color: black;
+	padding: 5px 15px;
+	border-radius: 5px;
+	color: white;
+}
+
+#modal::backdrop{
+	background-color: rgba(0,0,0,.55);
+}
+#modal {
+	max-width: 50ch;
+}

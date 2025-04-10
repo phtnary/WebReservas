@@ -1,0 +1,271 @@
+
+.header{
+    background-color: #008d92;
+    padding: 1rem 0 3rem 0;
+}
+
+.container-nav{
+    display: flex; 
+	flex-wrap:wrap; 
+	justify-content: center;
+	    
+    
+}
+
+
+a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+   
+
+}
+
+.navegacion{
+    padding: 2rem 0 0 15rem;
+    display: flex;
+    gap:2rem;
+   
+}
+img{
+    margin:3rem 0 3rem 0;
+    width: 100%;
+    height:35rem;
+}
+
+
+
+
+
+
+/*////////////////////////////////////////////
+
+ /* Reset básico de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general para el body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+
+
+/* Contenedor principal de contenido (formulario + imagen) */
+.content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+	margin-top: 3rem;
+    justify-items: center;
+}
+
+/* Estilo del formulario */
+.form-container {
+    background-color: rgba(255, 255, 255, 0.8);  /* Fondo blanco con opacidad */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.label-lugar{
+	margin-top: 3rem;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #008d92;
+    outline: none;
+}
+
+button.btn {
+    background-color: #008d92;
+    color: white;
+    padding: 10px 20px;
+	margin-top:2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button.btn:hover {
+    background-color: deepskyblue;
+}
+
+/* Estilo de la imagen */
+.image-container {
+	position:relative;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.text-block {
+	  position: absolute;
+	 top:22rem;
+	  right: 20px;
+	  background-color:rgba(0, 0, 0, 0.5);
+	  color: white;
+	  padding-left: 20px;
+	  padding-right: 20px;
+}
+
+
+.image-container img {
+    width: 100%;
+    height: auto;
+	padding-bottom: 4rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .content-container {
+        grid-template-columns: 1fr; /* Coloca los elementos en una sola columna */
+        justify-items: stretch; /* Hace que los elementos ocupen todo el ancho disponible */
+    }
+
+    .form-container {
+        max-width: 100%; /* Asegura que el formulario ocupe el 100% en pantallas pequeñas */
+    }
+
+    .image-container img {
+        max-width: 100%; /* Hace que la imagen ocupe todo el ancho disponible */
+    }
+	
+	.navegacion{
+		padding:0;	
+	}
+	
+	.header{
+		padding:5rem;
+	}
+	
+}
+
+	p{
+		text-align: center;
+		margin-top:1rem;
+	}
+
+
+/* Estilo para el contenedor principal */
+   .faq-container {
+     max-width: 800px;
+     margin: 0 auto;
+     padding: 20px;
+     font-family: Arial, sans-serif;
+   }
+
+   /* Estilo de las preguntas frecuentes */
+   .faq-item {
+     padding: 10px 0;
+     border-bottom: 1px solid #ccc; /* Línea fina gris */
+   }
+
+   .faq-item:last-child {
+     border-bottom: none; /* Quita la línea del último item */
+   }
+
+   .faq-question {
+     font-weight: bold;
+     color: #333;
+     font-size: 1.1em;
+   }
+
+   .faq-answer {
+     margin-top: 5px;
+     color: #555;
+   }
+
+   /* Estilos responsivos */
+   @media (max-width: 600px) {
+     .faq-container {
+       padding: 10px;
+     }
+
+     .faq-question {
+       font-size: 1em;
+     }
+
+     .faq-answer {
+       font-size: 0.9em;
+     }
+   }
+
+   
+   /* css al mensaje oculto*/
+
+   #message {
+     position: absolute;
+	 top: 1rem;
+     right: 12rem; /* Alinea el mensaje a la derecha del header */
+     color: blue;
+     padding: 20px;
+     border-radius: 5px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+     display: none; /* No mostrar el mensaje al principio */
+     font-size: 16px;
+     transform: translateX(-100%); /* Inicialmente, el mensaje está fuera de la pantalla por la izquierda */
+     animation: slideIn 1s forwards; 
+     
+   }
+
+   /* Definición de la animación slideIn */
+   @keyframes slideIn {
+     0% {
+       transform: translateX(-100%); /* El mensaje comienza fuera de la pantalla a la izquierda */
+       opacity: 0; /* Inicialmente, el mensaje está invisible */
+     }
+     100% {
+       transform: translateX(0); /* El mensaje se mueve a su posición final (a la derecha del header) */
+       opacity: 1; /* El mensaje se hace completamente visible */
+     }
+   }
+
+   /* Clases para mostrar el mensaje */
+   #message.show {
+     display: block; /* Muestra el mensaje */
+   }
+
+   .hidden {
+     display: none; /* Mantiene oculto el mensaje por defecto */
+   }

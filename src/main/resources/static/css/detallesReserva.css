@@ -1,0 +1,213 @@
+.body{
+    background-color: #f6f4f0;
+}
+
+.header{
+    background-color: #008d92;
+    padding: 1rem 0 3rem 0;
+    
+}
+
+.container-nav{
+    display: flex;   
+	flex-wrap:wrap; 
+	justify-content: center;
+}
+
+.navegacion{
+    padding: 2rem 0 0 15rem;
+    display: flex;
+    gap:2rem;
+   
+}
+
+.content-footer{
+		text-align: center;
+		margin-top:1rem;
+	}
+
+a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: url('/img/fondo1.jpg');
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;     
+}
+
+/* El div principal centrado */
+.content {
+    width: 50%;
+    max-width: 900px;
+    border: 2px solid blue;
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top:20px;
+    border-radius: 15px;
+    
+}
+
+/*Login*/
+
+.container-login {
+    width: 100%;
+	display: flex;
+	padding-top:5rem;
+	padding-bottom:15rem;
+    justify-content: center;
+    background-image: url('/img/fondo1.jpg');
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;     
+}
+
+
+.content-login{
+	width: 50%;
+	
+    max-width: 900px;
+    border: 2px solid blue;
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top:20px;
+    border-radius: 15px;
+}
+
+
+
+/* Estilos para el título */
+h3 {
+    margin-bottom: 20px;
+}
+
+/* Estilos para el div con los párrafos divididos */
+.split {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    border-bottom: 2px solid black;
+    padding-bottom: 20px;
+}
+
+.left, .right {
+    width: 45%;
+}
+
+.left p, .right p {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Estilos para el formulario */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form label {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.form input {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+	border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 20%;
+}
+
+.form button:hover {
+    background-color: darkblue;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .split {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+/*tooltip */
+
+button {
+    position: relative; /* Necesario para colocar el tooltip */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.tooltip .tooltip-text {
+    visibility: hidden; /* Ocultamos el tooltip por defecto */
+    width: 20rem;
+    background-color: blue;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    bottom: 100%; /* Lo coloca justo arriba del botón */
+	margin-bottom: 2rem;
+    left: 50%;
+    margin-left: -60px; /* Centra el tooltip en el botón */
+    opacity: 0; /* Lo hace invisible */
+    transition: opacity 0.3s; /* Efecto de desvanecimiento */
+}
+
+/* Mostrar el tooltip cuando el ratón pasa por encima del botón */
+button:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.enlace-registrar{
+	color:#0000FF;
+	text-decoration: underline;
+	
+}
+
+.contacto{
+	text-align: center;
+	margin-top:1rem;
+}
+
+.inputLectura {
+	color:grey;
+}
+.reserva{
+	color:blue;
+	font-size:small;
+}
+
+.error{
+		color:red;
+		font-size: small;
+}

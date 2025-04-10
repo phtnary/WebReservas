@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+	<!DOCTYPE html>
+	<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>WebReservasAventura</title>
+	    <link rel="stylesheet" href="/css/faqs.css">
+		<link rel="stylesheet" href="css/w3.css">
+		<script src="js/home.js"></script>
+	</head>
+	<body>
+	    
+	    <header class="header">
+	        <div class="info-header">               
+	            <div class="container-nav">
+					<div class="contenedor-logo">
+	                 <a th:href="@{/home}" ><img src="/img/logo.png" alt="logo-img" style="width:22rem;height:8rem;"></a>
+					</div>
+					<div class="bar-nav">
+						
+	                    <nav class="navegacion">
+							<a th:href="@{/home}" class="w3-button">Home</a>
+					          <div class="w3-dropdown-hover" th:if="${isAnonymousUser}">
+							    <button class="w3-button">Login</button>
+							    <div class="w3-dropdown-content w3-bar-block w3-border">
+								  <a th:href="@{/myHome}" class="w3-bar-item w3-button">Lógate</a>
+							      <a th:href="@{/registro}" class="w3-bar-item w3-button">Regístrate</a>   
+							    </div>
+							  </div>
+							  
+							  <div class="w3-dropdown-hover"th:if="${isAnonymousUser==false}">
+  								
+  							    <button class="w3-button" th:text="${usuarioSesion}"></button>
+  							    <div class="w3-dropdown-content w3-bar-block w3-border">
+  							      <a th:href="@{/miPerfil}" class="w3-bar-item w3-button">Ver Perfil</a>
+  								  <form th:action="@{/logout}" method="post">
+  							      <button type="submit" class="w3-bar-item w3-button">Cerrar sesión</button>
+  								  </form>
+  							    </div>
+  							  </div>
+
+						</nav>
+					</div> 
+	           	 </div>
+	        </div>
+	    </header>
+		
+			
+		
+
+		<div class="content-container">
+		       <!-- Formulario -->
+		       <div class="form-container">
+					<div class="faq-item">
+				      <div class="faq-question">Preguntas frecuentes</div>
+				      <div class="faq-answer">En esta sección respondemos a las dudas más comunes de nuestros aventureros y aventureras.</div>
+				    </div>
+				    <div class="faq-item">
+				      <div class="faq-question">He perdido mi contraseña y necesito recuperarla</div>
+				      <div class="faq-answer"> Ponte en contacto con nosotros por email y te lo gestionamos.</div>
+				    </div>
+				    <div class="faq-item">
+				      <div class="faq-question">¿Hay que abonar las reservas antes del día de la experiencia?</div>
+				      <div class="faq-answer">No, el pago se realiza el mismo día de la reserva en la empresa que te ofrece el servicio.</div>
+				    </div>
+				    <div class="faq-item">
+				      <div class="faq-question">¿Puedo cancelar?</div>
+				      <div class="faq-answer">Sí, puedes cancelar la reserva contactando directamente con la empresa. 
+						Los datos de contacto los tienes en tu perfil, sección historial de reservas.</div>
+				    </div>
+					<div class="faq-item">
+				      <div class="faq-question">¿Tengo seguridad al reservar?</div>
+				      <div class="faq-answer">Totalmente, el equipo de Destino Aventura selecciona cuidadosamente las empresas que ofrecen aventuras en nuestra web 
+						 por su respeto e implicación con la naturaleza y también con las personas por lo que ofrecen una alta calidad en el servicio. 
+						 Cuando se confirma una reserva aseguramos su realización. 
+						 Solo acude en el día y la hora seleccionada a la dirección que aparece en tu registro de reserva. </div>
+				    </div>
+					<div class="faq-item">
+				      <div class="faq-question">¿Es posible que mi reserva sea cancelada por la empresa?</div>
+				      <div class="faq-answer">Sí, ante condiciones climáticas que impidan la plena seguridad para las personas en 
+						el desarrollo de la actividad es motivo de cancelación. En caso de previsión adversa, la empresa se pondrá en contacto con la persona que ha realizado la reserva. </div>
+				    </div>
+					
+		       </div>
+
+		       <!-- Imagen -->
+		       <div class="image-container">
+					<div id="message" class="hidden">
+					   <h4>Si nuestras preguntas frecuentes te dejan con dudas, escribe a destinoaventura@tudestinoenasturias.com ¡Estaremos encantados de responderte!</h2>
+					 </div>
+		           <img class="image"src="/img/cascada.jpg" alt="imagen">
+				   <div class="text-block">
+				       <h3>Magia y vida</h3>
+				    </div>
+					
+		       </div>
+			  
+			   
+		   </div>
+
+	    
+	        <footer class="header">
+	            <div >
+	               <p>destinoaventura@tudestinoenasturias.com </p>
+	            </div>
+	    
+	            <p>Todos los derechos Reservados 2025 &copy;</p>
+	        </footer>
+
+			
+
+	</body>
+	</html>

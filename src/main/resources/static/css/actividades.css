@@ -1,0 +1,140 @@
+.body{
+    background-color: #f6f4f0;
+}
+
+.header{
+    background-color: #008d92;
+	padding: 1rem 0 3rem 0;
+    
+}
+
+
+p{
+	text-align: center;
+	margin-top:1rem;
+}
+
+h1{
+    color: white;
+}
+.container{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Se ajusta automáticamente */
+	gap: 2rem; 
+	padding: 20px;
+	margin-right: 2rem;
+}
+.container-nav{
+	 display: flex; 
+	 flex-wrap:wrap;   
+	 justify-content: center;
+	 
+}
+
+a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+   
+}
+
+.navegacion{
+    padding: 2rem 0 0 15rem;
+    display: flex;
+    gap:2rem;
+   
+}
+
+.container-opciones{
+	width: 100%;
+	height: 8rem;
+	background-color: #2980b9;
+	
+}
+.actividad{
+	margin-right: 5rem;
+}
+
+
+.flip-card {
+    background-color: transparent;
+	display: flex;
+	flex-wrap: wrap; 
+	justify-content: space-between; /* Ajusta las tarjetas entre sí */
+	gap: 1.75rem; /* Espacio entre las tarjetas */
+	padding: 1.75rem;
+    width: 25rem;
+    height: 45rem;
+    perspective: 1000px;
+	
+  }
+  .img-flip-card{
+	width:80%;
+	height:55%;
+	margin:1rem;
+  }
+ .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: dodgerblue;
+    color: black;
+  }
+  
+  .flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  
+  #map {
+	
+	height:200px;
+	margin:1rem;
+  }
+  
+  .buton-reserva {
+	
+    
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      background-color: blue;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      width: 20%;
+  }
+
+  .buton-reserva:hover {
+      background-color: darkorange;
+  }
+  
+  @media (max-width: 768px) {
+	.header{
+			padding:5rem;
+		}
+	
+	}
+	
+	
+	

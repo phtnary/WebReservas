@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+	<!DOCTYPE html>
+	<html lang="en" xmlns:th="http://www.thymeleaf.org">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>WebReservasAventura</title>
+			<link rel="stylesheet" href="/css/detallesReserva.css">
+			<link rel="stylesheet" href="css/w3.css">
+			<script src="js/home.js"></script>
+		</head>
+		<body>
+			<header class="header">
+				        <div class="info-header">               
+				            <div class="container-nav">
+				                <a th:href="@{/home}" ><img src="/img/logo.png" alt="logo-img" style="width:22rem;height:8rem;"></a>
+				                <div class="bar-nav">
+				                    <nav class="navegacion">
+										
+										<a th:href="@{/home}" class="w3-button">Home</a>
+										<a th:href="@{/preguntasFrecuentes}" class="w3-button">FAQ's</a>
+								          <div class="w3-dropdown-hover">
+											
+										    <button class="w3-button" th:text="${usuarioSesion}"></button>
+										    <div class="w3-dropdown-content w3-bar-block w3-border">
+										      <a th:href="@{/miPerfil}" class="w3-bar-item w3-button">Ver Perfil</a>
+											  <form th:action="@{/logout}" method="post">
+										      <button type="submit" class="w3-bar-item w3-button tooltip">Cerrar sesión
+												
+											  </button>
+											  </form>
+										      
+										    </div>
+										  </div>
+										</a>
+									</nav>
+				            	</div>
+				            </div>
+				        </div>
+				    </header>		
+	<div class="container">
+		<div class="content">
+			<h3>Detalles de su reserva</h3>
+			<div class="split">
+				<div class="left">
+					<p th:text="'Aventura: ' +${detalleReserva.nombreActividad}"></p>
+					<p th:text="'Lugar: ' +${detalleReserva.ciudad}"></p>
+					<p th:text="'Empresa: ' +${detalleReserva.empresa}"></p>
+					<p th:text="'Dirección: ' +${detalleReserva.direccion}"></p>
+					
+				</div>
+				<div class="right">
+					
+					<p th:text="'Fecha: ' +${#dates.format(detalleReserva.date, 'dd MMM yyyy')}"></p>
+					<p th:text="'Hora: ' +${detalleReserva.hora}"></p>
+					
+					<p th:text="'Duración: ' +${detalleReserva.duracion.intValue()}"></p>
+					<p th:text="'Personas: ' +${detalleReserva.numPersonas}"></p>
+					<p th:text="'Precio por persona: ' +${detalleReserva.precioPorPersona.intValue()} + ' €'"></p>
+					<p th:text="'Total: ' +${detalleReserva.precioTotal.intValue()} + ' €'"></p>
+					<p class="reserva">Reserva a abonar en la empresa el día de la aventura.</p>
+					
+					
+				</div>
+			</div>
+			<form class="form" th:action="@{/persisteReserva}" th:object="${detalleCliente}" method="GET">
+				<label for="nombre">Nombre:</label>
+				<input class="inputLectura" type="text" id="nombre" name="nombre" th:value="${detalleCliente.nombre}" readonly>
+				
+				<label for="apellido">Apellidos:</label>
+				<input class="inputLectura" type="text" id="apellido" name="apellido" th:value="${detalleCliente.apellidos}" readonly>
+				
+				<label for="email">Email:</label>
+				<input class="inputLectura" type="email" id="email" name="email" th:value="${detalleCliente.email}" readonly>
+				
+				<label for="telefono">Teléfono:</label>
+				<input class="inputLectura" type="tel" id="telefono" name="telefono" th:value="${detalleCliente.telefono}" readonly>
+				
+				<button class="tooltip" type="submit">Confirmar
+					<span class="tooltip-text">La reserva va a ser confirmada
+						 ¿Estás seguro/a de que quieres confirmar? </span>
+				</button>
+				
+				
+			</form>
+		</div>
+	</div>
+	<footer class="header">
+		<div class="info-header">
+			<nav class="container-nav">
+				<a href="nosotros.html">Nosotros</a>
+				<a href="anuncios.html">Anuncios</a>
+				<a href="blog.html">Blog</a>
+				<a href="contacto.html">Contacto</a>
+			</nav>
+		</div>
+
+		<p class="copyright">Todos los derechos Reservados 2024 &copy;</p>
+	</footer>
+
+</body>
+</html>

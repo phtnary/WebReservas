@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+	<!DOCTYPE html>
+	<html lang="en" xmlns:th="http://www.thymeleaf.org">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>WebReservasAventura</title>
+			<link rel="stylesheet" href="/css/miPerfil.css">
+			<link rel="stylesheet" href="css/w3.css">
+			<script src="js/validarCamposPerfil.js"></script>
+			<script src="js/ajaxPerfil.js"></script>
+		</head>
+		<body >
+		              
+		<header class="header">              
+            <div class="container-nav">
+                <a th:href="@{/home}" ><img src="/img/logo.png" alt="logo-img" style="width:22rem;height:8rem;"></a>
+                <div class="bar-nav">
+                    <nav class="navegacion">
+						<a th:href="@{/home}" class="w3-button">Home</a>
+						<a th:href="@{/preguntasFrecuentes}" class="w3-button">FAQ's</a>
+				          <div class="w3-dropdown-hover">
+							
+						    <button class="w3-button" th:text="${usuarioSesion}"></button>
+						    <div class="w3-dropdown-content w3-bar-block w3-border">
+								  <form th:action="@{/logout}" method="post">
+							      <button type="submit" class="w3-bar-item w3-button">Cerrar sesión</button>
+								  </form> 
+						    </div>
+						  </div>
+						</a>
+					</nav>
+            	</div>
+            </div>
+		 </header>
+
+                
+	<div class="container">
+		<div class="content">
+			<h3>Mi perfil</h3>
+           
+            <div class="split"></div>
+            <p>Mis datos personales</p>
+			<form class="form" th:action="@{/modificaPerfil}" th:object="${detalleCliente}" method="POST">
+				<label for="nombre">Nombre:</label>
+				<input type="text" id="nombre" name="nombre" th:field="${detalleCliente.nombre}"required>
+				<div class="error" id="errorNombre"></div>
+				
+				<label for="apellidos">Apellidos:</label>
+				<input type="text" id="apellidos" name="apellidos" th:field="${detalleCliente.apellidos}" required>
+				<div class="error" id="errorApellido"></div>
+				
+				<label for="email">Email:</label>
+				<input class="inputLectura" type="email" id="email" name="email" th:field="${detalleCliente.email}" readonly >
+				
+				
+				<label for="telefono">Teléfono:</label>
+				<input type="tel" id="telefono" name="telefono" th:field="${detalleCliente.telefono}" required>
+				<div class="error" id="errorTelefono"></div>
+				
+				<button type="submit" id="confirmar">Modificar</button>			
+			</form>
+				<a class="borrar-perfil" th:href="@{/borrarPerfil}">Borrar mi perfil</a>
+                <div class="split"></div>
+                <h3>Mi historial de destinos</h3>
+                
+			<div th:each="Reserva: ${listaReservas}">
+                <div  class="split">    
+                    <div class="left">
+						<span th:text="${Reserva.nombreActividad}"> </span>
+						 <span th:text="${Reserva.ciudad}"></span>
+						 <img th:src="'/img/'+${Reserva.nombreActividad}+'.jpg'" class="imgHistorial" alt="Imagen pequeña">
+						<span th:if="${Reserva.date.after(fechaActual)}" style="background-color: skyblue;">Por disfrutar</span>
+						<span th:if="${Reserva.date.before(fechaActual)}" style="background-color: pink;">Ya disfrutada</span>
+						<span th:if="${Reserva.date.equals(fechaActual)}" style="background-color: darkorange;">La disfrutas hoy</span>
+						
+						
+						
+						
+						
+                        
+                    </div>
+                    <div class="right">
+                        <div class="introcontainer">
+                           
+                            <span th:text="'Fecha: ' +${#dates.format(Reserva.date, 'dd MMM yyyy')}"></span>
+							<p th:text="'A las '+${Reserva.hora}+' horas'"></p>
+                        </div>
+							
+	                        <p th:text="${Reserva.empresa}"></p>
+	                        <p th:text="${Reserva.direccion}"></p>
+							<p th:text="${Reserva.emailEmpresa}"></p>
+							<p th:text="${Reserva.telefonoEmpresa}"></p>
+	                        <p th:text="'Experiencia de ' +${Reserva.duracion.intValue()} + ' horas'"> </p>
+	                        <p th:text="'Para ' +${Reserva.numPersonas}+ ' persona/s'"> </p>
+	                        <p th:text="${Reserva.precioPorPersona.intValue()} +' € por persona'"></p>
+	                        <p th:text="'Total a abonar en destino: '+${Reserva.precioTotal.intValue() + ' €'}"> </p>
+							
+                   	</div>
+			    </div>
+			</div> 
+		</div>
+	</div>	
+
+	<footer class="header">
+        <div >
+           <p class="contacto">destinoaventura@tudestinoenasturias.com </p>
+        </div>
+
+        <p class="contacto">Todos los derechos Reservados 2025 &copy;</p>
+    </footer>
+
+</body>
+</html>
