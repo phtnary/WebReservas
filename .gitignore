@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+### accedo BD protegido ###
+src/main/resources/application.properties
