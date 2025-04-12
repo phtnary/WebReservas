@@ -34,4 +34,4 @@ build/
 
 
 ### accedo BD protegido ###
-src/main/resources/application.properties
+/src/main/resources/application.properties
