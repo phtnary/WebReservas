@@ -204,21 +204,21 @@ CREATE TABLE `empresas` (
 --
 
 INSERT INTO `empresas` (`id_empresa`, `nombre`, `direccion`, `cp`, `telefono`, `email`, `latitud`, `longitud`) VALUES
-(1, 'Astur Aventura', 'Calle de Campoamor, 15', '33560', '666777888', 'astur@aventura.com', 43.466049, -5.063184),
-(2, 'Kayak Ribadesella', 'Paseo de la Playa, 17', '33560', '666777888', 'kayak@aventura.com', 43.467887, -5.076392),
-(3, 'Costa Norte Vela', 'Mirador del Monolito, S/N', '33710', '666777888', 'costa@aventura.com', 43.554675, -6.720822),
-(4, 'Naranjo Escalada', 'Calle Venancio Martínez, 1', '33710', '666777888', 'naranjo@aventura.com', 43.537046, -6.723365),
-(5, 'Aventura Norte', 'Paseo del Muro de San Lorenzo, 9', '33201', '666777888', 'aventura@aventura.com', 43.540491, -5.652595),
-(6, 'Deportes de agua Gijón', 'Camin del monte Serin, 45', '33201', '666777888', 'deportes@aventura.com', 43.54819, -5.609615),
-(7, 'Luarca Aventura', 'Calle los Chouzones , 12', '33700', '666777888', 'luarca@aventura.com', 43.560087, -6.623297),
-(8, 'Valle Verde', 'Calle San Antón , 24', '33500', '666777888', 'valle@aventura.com', 43.42023, -4.750342),
-(9, 'Ocio y Aventura Picos de Europa', 'Avenida de la Paz, 13', '33500', '666777888', 'ocio@aventura.com', 43.420822, -4.755278),
-(10, 'Descensos Sella', 'Paseo de la Princesa Letizia, 8', '33560', '666777888', 'descensos@aventura.com', 43.46351, -5.058582),
-(11, 'Somiedo Aventura', 'Calle Río Somiedo, 6', '33840', '666777888', 'somiedo@aventura.com', 43.094716, -6.256864),
-(12, 'Multiaventura Norte', 'Calle Pedro Niembro , 5', '33320', '666777888', 'multiaventura@aventura.com', 43.303113, -4.817178),
+(1, 'Astur Aventura', 'Calle de la amistad, 15', '33560', '666777888', 'astur@aventura.com', 43.466049, -5.063184),
+(2, 'Kayak Ribadesella', 'Paseo del arroyo, 17', '33560', '666777888', 'kayak@aventura.com', 43.467887, -5.076392),
+(3, 'Costa Norte Vela', 'Mirador del mar, S/N', '33710', '666777888', 'costa@aventura.com', 43.554675, -6.720822),
+(4, 'Naranjo Escalada', 'Calle Vera, 1', '33710', '666777888', 'naranjo@aventura.com', 43.537046, -6.723365),
+(5, 'Aventura Norte', 'Paseo de la luna, 9', '33201', '666777888', 'aventura@aventura.com', 43.540491, -5.652595),
+(6, 'Deportes de agua Gijón', 'Camin del monte alto, 45', '33201', '666777888', 'deportes@aventura.com', 43.54819, -5.609615),
+(7, 'Luarca Aventura', 'Calle de los fruteros , 12', '33700', '666777888', 'luarca@aventura.com', 43.560087, -6.623297),
+(8, 'Valle Verde', 'Calle San Antony , 24', '33500', '666777888', 'valle@aventura.com', 43.42023, -4.750342),
+(9, 'Ocio y Aventura Picos de Europa', 'Avenida de las estrellas, 13', '33500', '666777888', 'ocio@aventura.com', 43.420822, -4.755278),
+(10, 'Descensos Sella', 'Paseo  Princesa , 8', '33560', '666777888', 'descensos@aventura.com', 43.46351, -5.058582),
+(11, 'Somiedo Aventura', 'Calle Río , 6', '33840', '666777888', 'somiedo@aventura.com', 43.094716, -6.256864),
+(12, 'Multiaventura Norte', 'Calle de la aventura , 5', '33320', '666777888', 'multiaventura@aventura.com', 43.303113, -4.817178),
 (13, 'Cangas Multiaventura', 'Calle Puente 12', '33550', '666777888', 'cangas@aventura.com', 43.350579, -5.13205),
-(14, 'Turismo Activo Senda de Oso', 'Calle el molín, 3', '33840', '666777888', 'turismo@aventura.com', 43.092788, -6.25511),
-(15, 'Asturias Adventure', 'Senda Río Cares, 6', '33555', '666777888', 'asturias@aventura.com', 43.301477, -4.816094);
+(14, 'Turismo Activo Senda de Oso', 'Calle Lorem, 3', '33840', '666777888', 'turismo@aventura.com', 43.092788, -6.25511),
+(15, 'Asturias Adventure', 'Senda Río Lorem, 6', '33555', '666777888', 'asturias@aventura.com', 43.301477, -4.816094);
 
 -- --------------------------------------------------------
 
